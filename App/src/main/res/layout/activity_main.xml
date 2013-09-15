@@ -29,6 +29,13 @@
         android:text="@string/button_populate_party"
         android:onClick="populateParty"/>
 
+    <Button
+        android:id="@+id/populate_database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_populate_database"
+        android:onClick="populateDatabase"/>
+
 
 
 </LinearLayout>

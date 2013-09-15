@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.project.app.AppConfig;
+import com.project.app.model.Party;
 
 public class Database extends SQLiteOpenHelper {
 
@@ -33,7 +34,9 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public void databaseSetup(SQLiteDatabase database){
-        
+        Party party = new Party(null);
+        database.execSQL("DROP TABLE IF EXISTS " + Party.TABLE_NAME);
+        database.execSQL(party.getCreateSql());
     }
 
     public void upgradeFrom1to2(SQLiteDatabase database){

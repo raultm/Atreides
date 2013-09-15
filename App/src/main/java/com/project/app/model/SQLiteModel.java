@@ -214,12 +214,16 @@ public abstract class SQLiteModel implements Model {
     public ContentValues parse2ContentValues() {
         ContentValues cv = new ContentValues();
         for (Map.Entry<String, SQLiteField> entry : fields.entrySet()){
-            if(entry.getValue().get().equals("")){
-                cv.put(entry.getKey(), entry.getValue().get());
+            String fieldName = entry.getKey();
+
+            if(getValues().get(fieldName).equals("")){
+                if(fieldName.equals(getIdField())){ continue; }
+                cv.put(fieldName, "");
                 continue;
+            }else{
+                cv.put(fieldName, getValues().get(fieldName));
             }
-            cv.put(entry.getKey(), entry.getValue().get());
-            //System.out.println(entry.getKey() + "/" + entry.get());
+            AppConfig.log(fieldName + "/" + cv.get(fieldName));
         }
         return cv;
     }
@@ -289,7 +293,7 @@ public abstract class SQLiteModel implements Model {
             }
             index++;
         }
-        return "CREATE TABLE " + getTableName() + " (" + implode(fieldColumns, ", ") + " )";
+        return "CREATE TABLE " + getTableName() + " (" + implode(fieldColumns, ", ") + " );";
     }
 
     public static String implode(String[] array, String glue) {

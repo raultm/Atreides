@@ -8,5 +8,6 @@
     <string name="button_create_database">Create Database</string>
     <string name="atreides_title">Atreides</string>
     <string name="button_populate_party">Populate Party</string>
+    <string name="button_populate_database">Populate Database</string>
 
 </resources>
