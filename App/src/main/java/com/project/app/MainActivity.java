@@ -50,6 +50,9 @@ public class MainActivity extends Activity {
         party.save(party);
 
         List<Model> list = party.findAll();
+
+        AppConfig.log("TEST", "4 Parties Added after clearTable(), result of findAll -> " + list.size());
+
         Iterator<Model> iterator = list.iterator();
         while (iterator.hasNext()) {
             AppConfig.log(iterator.next().toString());
