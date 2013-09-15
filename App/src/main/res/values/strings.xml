@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="button_openactivity">Open Same Activity</string>
     <string name="button_create_database">Create Database</string>
+    <string name="atreides_title">Atreides</string>
 
 </resources>
