@@ -242,6 +242,7 @@ public abstract class SQLiteModel implements Model {
     }
 
     public void fill(HashMap<String, String> values){
+        if(values == null){ values = new HashMap<String, String>(); }
         for (Map.Entry<String, SQLiteField> entry : getFields().entrySet()){
             String fieldName = entry.getKey();
             String value = "";
@@ -303,6 +304,19 @@ public abstract class SQLiteModel implements Model {
     public HashMap<String, SQLiteField> getFields(){
         return new HashMap<String, SQLiteField>();
     };
+
+    @Override
+    public String toString(){
+        String toString = "\n" + "Entidad: " + getTableName() + "\n";
+        HashMap<String, String> values = getValues();
+
+        for (Map.Entry<String, String> entry : values.entrySet()){
+            String fieldName = entry.getKey();
+            String value = entry.getValue();
+            toString+= "\t" + fieldName + ": " + value + "\n";
+        }
+        return toString;
+    }
 
     public abstract String getTableName();
     public abstract View populateItem(View view);

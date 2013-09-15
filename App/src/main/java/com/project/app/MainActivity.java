@@ -18,5 +18,10 @@ public class MainActivity extends Activity {
         Party party = new Party(this);
         AppConfig.log(party.getCreateSql());
     }
-    
+
+    public void populateParty(View view){
+        Party party = new Party(this);
+        party.setValue("name", "Ciudadanos");
+        AppConfig.log(party.toString());
+    }
 }

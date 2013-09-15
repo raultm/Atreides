@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Party extends SQLiteModel implements Model {
 
-    public static String TABLE_NAME = "parties";
+    public static final String TABLE_NAME = "parties";
 
     public HashMap<String, SQLiteField> getFields(){
         if(fields != null){
@@ -66,4 +66,5 @@ public class Party extends SQLiteModel implements Model {
         }
         return list;
     }
+
 }

@@ -7,5 +7,6 @@
     <string name="button_openactivity">Open Same Activity</string>
     <string name="button_create_database">Create Database</string>
     <string name="atreides_title">Atreides</string>
+    <string name="button_populate_party">Populate Party</string>
 
 </resources>
