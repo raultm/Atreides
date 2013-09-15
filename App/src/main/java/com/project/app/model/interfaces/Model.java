@@ -13,6 +13,12 @@ public abstract interface Model{
     // The content of the Id Field
     public abstract long getIdValue();
 
+    // Attributes
+    public void setValue(String key, String value);
+    public void setValue(String key, int value);
+
+    public String getValue(String key);
+
     // Actions against Data Structure
     public abstract boolean save(Model model); // Add or Update.
     public abstract boolean delete(long id);

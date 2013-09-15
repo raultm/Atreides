@@ -30,25 +30,9 @@ public class MainActivity extends Activity {
     }
 
     public void populateDatabase(View view){
+        populateParties(4);
+
         Party party = new Party(this);
-        party.clearTable();
-
-        party.setValue("_id", "1");
-        party.setValue("name", "Ciudadanos");
-        party.save(party);
-
-        party.setValue("_id", "2");
-        party.setValue("name", "PP");
-        party.save(party);
-
-        party.setValue("_id", "3");
-        party.setValue("name", "PSOE");
-        party.save(party);
-
-        party.setValue("_id", "4");
-        party.setValue("name", "IU");
-        party.save(party);
-
         List<Model> list = party.findAll();
 
         AppConfig.log("TEST", "4 Parties Added after clearTable(), result of findAll -> " + list.size());
@@ -56,6 +40,28 @@ public class MainActivity extends Activity {
         Iterator<Model> iterator = list.iterator();
         while (iterator.hasNext()) {
             AppConfig.log(iterator.next().toString());
+        }
+    }
+
+    public void findParty(View view){
+        populateParties(6);
+        Party staticParty = new Party(this);
+
+        Model ciudadanosModel = staticParty.read(5);
+
+        AppConfig.log("TEST", ciudadanosModel.getValue("name"));
+        AppConfig.log("TEST", ciudadanosModel.toString());
+    }
+
+    private void populateParties(int numOfPartiesToPopulate){
+        Party party = new Party(this);
+        party.clearTable();
+        String[] parties = {"Ciudadanos", "PP", "PSOE", "IU"};
+
+        for(int index = 0; index < numOfPartiesToPopulate; index++){
+            party.setValue("_id", (index+1));
+            party.setValue("name", parties[index%parties.length]);
+            party.save(party);
         }
     }
 }

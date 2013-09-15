@@ -248,6 +248,10 @@ public abstract class SQLiteModel implements Model {
         getValues().put(key, Integer.toString(value));
     }
 
+    public String getValue(String key){
+        return getValues().get(key);
+    }
+
     public void fill(HashMap<String, String> values){
         if(values == null){ values = new HashMap<String, String>(); }
         for (Map.Entry<String, SQLiteField> entry : getFields().entrySet()){
