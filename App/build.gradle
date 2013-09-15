@@ -1,0 +1,56 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.5.+'
+        classpath 'com.novoda.gradle:robolectric-plugin:0.0.1-SNAPSHOT'
+    }
+}
+
+apply plugin: 'android'
+apply plugin: 'robolectric'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:13.0.+'
+    robolectricCompile 'org.robolectric:robolectric:2.0'
+    robolectricCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "17.0.0"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 17
+    }
+}
+
+task listAndroidJars << {
+    println android.applicationVariants.each {
+        println it
+    }
+
+    println android.plugin.getRuntimeJarList()
+}
+
+task listJars << {
+    configurations.robolectric.each { File file -> println file.name }
+}
+
+task libs(type: Sync) {
+    from configurations.robolectric
+    into "/tmp/libs"
+}

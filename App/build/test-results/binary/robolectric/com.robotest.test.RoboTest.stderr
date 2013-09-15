@@ -1,0 +1,3 @@
+WARNING: no system properties value for ro.build.date.utc
+14-sep-2013 22:29:50 org.robolectric.res.Attribute extractPackageName
+ADVERTENCIA: unexpected ns uri "http://schemas.android.com/tools"

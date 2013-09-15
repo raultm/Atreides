@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "limit": 20,
+    "next": "/api/v1/party/?api_key=special-key&limit=20&offset=20",
+    "offset": 0,
+    "previous": null,
+    "total_count": 21
+  },
+  "objects": [
+    {
+      "id": 11,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D379",
+      "name": "EAJ-PNV",
+      "resource_uri": "/api/v1/party/11/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 9,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D194",
+      "name": "CiU",
+      "resource_uri": "/api/v1/party/9/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 3,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D42",
+      "name": "UPyD",
+      "resource_uri": "/api/v1/party/3/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 17,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D335",
+      "name": "CC-NC-PNC",
+      "resource_uri": "/api/v1/party/17/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 7,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D184",
+      "name": "PSC-PSOE",
+      "resource_uri": "/api/v1/party/7/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 19,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D204",
+      "name": "UPN",
+      "resource_uri": "/api/v1/party/19/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 16,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D23",
+      "name": "IZQ-PLU",
+      "resource_uri": "/api/v1/party/16/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 12,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D296",
+      "name": "ERC-RI.cat",
+      "resource_uri": "/api/v1/party/12/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 5,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D372",
+      "name": "PSOE",
+      "resource_uri": "/api/v1/party/5/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 1,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D172",
+      "name": "PP",
+      "resource_uri": "/api/v1/party/1/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 14,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D147",
+      "name": "PP-PAR",
+      "resource_uri": "/api/v1/party/14/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 20,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D260",
+      "name": "EUPV",
+      "resource_uri": "/api/v1/party/20/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 6,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D226",
+      "name": "FORO",
+      "resource_uri": "/api/v1/party/6/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 2,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D338",
+      "name": "AMAIUR",
+      "resource_uri": "/api/v1/party/2/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 8,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D271",
+      "name": "GB",
+      "resource_uri": "/api/v1/party/8/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 21,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D71",
+      "name": "CHA",
+      "resource_uri": "/api/v1/party/21/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 10,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D275",
+      "name": "COMPROMÍS-Q",
+      "resource_uri": "/api/v1/party/10/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 15,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D375",
+      "name": "BNG",
+      "resource_uri": "/api/v1/party/15/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 4,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D366",
+      "name": "PP-EU",
+      "resource_uri": "/api/v1/party/4/",
+      "validate": true,
+      "web": null
+    },
+    {
+      "id": 13,
+      "logo": "/wc/visualizarLogo%3FcodParl%3D345",
+      "name": "ICV",
+      "resource_uri": "/api/v1/party/13/",
+      "validate": true,
+      "web": null
+    }
+  ]
+}

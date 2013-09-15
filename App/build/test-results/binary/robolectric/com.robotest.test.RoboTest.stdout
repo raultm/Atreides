@@ -1,0 +1,26 @@
+DEBUG: Loading resources for com.project.app from ./res...
+DEBUG: Loading resources for android from jar:/Users/raulete/.m2/repository/org/robolectric/android-res/4.1.2_r1_rc/android-res-4.1.2_r1_rc-real.jar!/res...
+INFO: no id mapping found for android:drawable/scrollbar_handle_horizontal; assigning ID #0x1140002
+INFO: no id mapping found for android:drawable/scrollbar_handle_vertical; assigning ID #0x1140003
+INFO: no id mapping found for android:attr/focus; assigning ID #0x1140004
+INFO: no id mapping found for android:color/highlighted_text_light; assigning ID #0x1140005
+INFO: no id mapping found for android:color/hint_foreground_light; assigning ID #0x1140006
+INFO: no id mapping found for android:color/link_text_light; assigning ID #0x1140007
+INFO: no id mapping found for android:color/dim_foreground_light_disabled; assigning ID #0x1140008
+INFO: no id mapping found for android:color/dim_foreground_light; assigning ID #0x1140009
+INFO: no id mapping found for android:color/bright_foreground_light; assigning ID #0x114000a
+INFO: no id mapping found for android:layout/text_edit_paste_window; assigning ID #0x114000b
+INFO: no id mapping found for android:layout/text_edit_no_paste_window; assigning ID #0x114000c
+INFO: no id mapping found for android:layout/text_edit_side_paste_window; assigning ID #0x114000d
+INFO: no id mapping found for android:layout/text_edit_side_no_paste_window; assigning ID #0x114000e
+INFO: no id mapping found for android:layout/text_edit_suggestion_item; assigning ID #0x114000f
+INFO: no id mapping found for android:color/highlighted_text_dark; assigning ID #0x1140010
+INFO: no id mapping found for android:color/hint_foreground_dark; assigning ID #0x1140011
+INFO: no id mapping found for android:color/link_text_dark; assigning ID #0x1140012
+INFO: no id mapping found for android:color/dim_foreground_dark_disabled; assigning ID #0x1140013
+INFO: no id mapping found for android:color/dim_foreground_dark; assigning ID #0x1140014
+INFO: no id mapping found for android:color/dim_foreground_dark_inverse_disabled; assigning ID #0x1140015
+INFO: no id mapping found for android:color/dim_foreground_dark_inverse; assigning ID #0x1140016
+INFO: no id mapping found for android:color/bright_foreground_dark_inverse; assigning ID #0x1140017
+INFO: no id mapping found for android:color/bright_foreground_light_disabled; assigning ID #0x1140018
+INFO: no id mapping found for android:drawable/screen_background_selector_light; assigning ID #0x1140019
