@@ -31,7 +31,6 @@ public class Party extends SQLiteModel implements Model {
 
     public Party(Context paramContext) {
         super(paramContext);
-        fill(null);
     }
 
     @Override

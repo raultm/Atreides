@@ -12,6 +12,11 @@ import static org.robolectric.Robolectric.shadowOf;
 import com.project.app.MainActivity;
 import com.project.app.R;
 
+import com.project.app.model.interfaces.Model;
+import com.project.app.model.Party;
+
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,20 +30,21 @@ import static org.junit.Assert.assertThat;
 public class RoboTest {
 
     private MainActivity activity;
-    private TextView textView;
-    private Button openAnotherMainActivityButton;
+    private Button populateDatabase;
 
     @Before
     public void setUp() throws Exception {
         activity = Robolectric.buildActivity(MainActivity.class).create().get();
-        //textView = (TextView) activity.findViewById(R.id.mainactivity_text);
-        //openAnotherMainActivityButton = (Button) activity.findViewById(R.id.mainactivity_button_open);
+        populateDatabase = (Button) activity.findViewById(R.id.button_populate_database);
     }
 
     @Test
     public void mainLabelHasStringHelloWorldFromResources() throws Exception {
+        populateDatabase.performClick();
 
-        assertThat(true, equalTo(true));
+        Party party = new Party(activity);
+        List<Model> parties = party.findAll();
+        assertThat(0, equalTo(parties.size()));
     }
 
 

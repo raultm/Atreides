@@ -29,7 +29,10 @@ public abstract class SQLiteModel implements Model {
 
     //public SQLiteModel(){}
 
-    public SQLiteModel(Context paramContext){ this.context = paramContext; }
+    public SQLiteModel(Context paramContext){
+        this.context = paramContext;
+        fill(null);
+    }
 
     public void setContext(Context paramContext){
         this.context = paramContext;

@@ -16,21 +16,21 @@
         android:text="@string/atreides_title"
         android:layout_gravity="center"/>
     <Button
-        android:id="@+id/create_database"
+        android:id="@+id/button_create_database"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_create_database"
         android:onClick="createDatabase"/>
 
     <Button
-        android:id="@+id/populate_party"
+        android:id="@+id/button_populate_party"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_populate_party"
         android:onClick="populateParty"/>
 
     <Button
-        android:id="@+id/populate_database"
+        android:id="@+id/button_populate_database"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_populate_database"
