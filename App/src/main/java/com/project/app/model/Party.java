@@ -14,7 +14,7 @@ public class Party extends SQLiteModel implements Model {
 
     public static String TABLE_NAME = "parties";
 
-    public static HashMap<String, SQLiteField>getFields(){
+    public HashMap<String, SQLiteField> getFields(){
         if(fields != null){
             return fields;
         }

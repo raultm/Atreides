@@ -24,7 +24,7 @@ public abstract class SQLiteModel implements Model {
     long id;
     long _id;
     Database mDbHelper;
-    protected static HashMap<String, SQLiteField> fields;
+    protected HashMap<String, SQLiteField> fields;
     protected HashMap<String, String> values;
 
     //public SQLiteModel(){}
@@ -273,7 +273,34 @@ public abstract class SQLiteModel implements Model {
         }
     }
 
-    public static HashMap<String, SQLiteField> getFields(){
+    public String getCreateSql(){
+        HashMap<String, SQLiteField> fields = getFields();
+
+        String[] fieldColumns = new String[fields.size()];
+        int index = 0;
+        for (Map.Entry<String, SQLiteField> entry : fields.entrySet()){
+            String fieldName = entry.getKey();
+            String columnType = entry.getValue().getColumnType();
+            if(fieldName.equals(getIdField())){
+                fieldColumns[index] =  fieldName + " integer primary key autoincrement";
+            }else{
+                fieldColumns[index] = fieldName + " " + columnType;
+            }
+            index++;
+        }
+        return "CREATE TABLE " + getTableName() + " (" + implode(fieldColumns, ", ") + " )";
+    }
+
+    public static String implode(String[] array, String glue) {
+        String out = "";
+        for(int i=0; i<array.length; i++) {
+            if(i!=0) { out += glue; }
+            out += array[i];
+        }
+        return out;
+    }
+
+    public HashMap<String, SQLiteField> getFields(){
         return new HashMap<String, SQLiteField>();
     };
 

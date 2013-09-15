@@ -17,6 +17,15 @@ public class SQLiteField {
         this.value = value;
     }
 
+    public String getColumnType(){
+        switch (getFieldType()){
+            case INTEGER:
+                return "integer";
+            default:
+                return "text";
+        }
+    }
+
     public int getFieldType(){
         return this.fieldType;
     }

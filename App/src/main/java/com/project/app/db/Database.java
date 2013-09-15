@@ -33,6 +33,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public void databaseSetup(SQLiteDatabase database){
+        
     }
 
     public void upgradeFrom1to2(SQLiteDatabase database){
