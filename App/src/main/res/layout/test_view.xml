@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/test_label_check"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Fail"/>
+
+    <TextView
+        android:id="@+id/test_text_check"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Unknown Test"
+        android:paddingLeft="10dip"
+        android:layout_toRightOf="@id/test_label_check"/>
+
+</RelativeLayout>

@@ -6,6 +6,7 @@ import android.widget.TextView;
 import android.widget.Button;
 import org.robolectric.shadows.ShadowActivity;
 import org.robolectric.shadows.ShadowIntent;
+import org.robolectric.shadows.ShadowSQL;
 
 import static org.robolectric.Robolectric.shadowOf;
 
@@ -36,6 +37,7 @@ public class RoboTest {
     public void setUp() throws Exception {
         activity = Robolectric.buildActivity(MainActivity.class).create().get();
         populateDatabase = (Button) activity.findViewById(R.id.button_populate_database);
+        Robolectric.bindShadowClass(SQLiteOpenHelper.class);
     }
 
     @Test

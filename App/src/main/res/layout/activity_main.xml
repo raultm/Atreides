@@ -43,6 +43,13 @@
         android:text="@string/button_find_party"
         android:onClick="findParty"/>
 
+    <Button
+        android:id="@+id/button_run_tests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_run_tests"
+        android:onClick="runTests"/>
+
 
 
 </LinearLayout>
