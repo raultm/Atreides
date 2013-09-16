@@ -97,9 +97,9 @@ public class TestsActivity extends Activity{
         Model ciudadanosModel = staticParty.read(5);
 
         if(ciudadanosModel.getValue("name").equals("Ciudadanos")){
-            addTestView(true, "findPartyCiudadanosAfterPopulateSixParties");
+            addTestView(true, "testFindPartyCiudadanosAfterPopulateSixParties");
         }else{
-            addTestView(false, "findPartyCiudadanosAfterPopulateSixParties");
+            addTestView(false, "testFindPartyCiudadanosAfterPopulateSixParties");
         }
     }
 
