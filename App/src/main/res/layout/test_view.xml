@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:text="Unknown Test"
         android:paddingLeft="10dip"
-        android:layout_toRightOf="@id/test_label_check"/>
+        android:layout_toRightOf="@id/test_label_check"
+        android:singleLine="true"/>
 
 </RelativeLayout>

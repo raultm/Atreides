@@ -60,47 +60,28 @@ public class TestsActivity extends Activity{
 
     public void testPartyCreateTableString(){
         Party party = new Party(this);
-        if(party.getCreateSql().equals("CREATE TABLE parties (id integer, resource_id text, logo text, web text, _id integer primary key autoincrement, validate text, name text );")){
-            addTestView(true, "testPartyCreateTableString");
-        }else{
-            addTestView(false, "testPartyCreateTableString");
-        }
+        boolean testCheck = party.getCreateSql().equals("CREATE TABLE parties (id integer, resource_id text, logo text, web text, _id integer primary key autoincrement, validate text, name text );");
+        addTestView(testCheck, "testPartyCreateTableString");
     }
 
     public void testPartySetValue(){
         Party party = new Party(this);
         party.setValue("name", "Ciudadanos");
-        if(party.getValue("name").equals("Ciudadanos")){
-            addTestView(true, "testPartySetValue");
-        }else{
-            addTestView(false, "testPartySetValue");
-        }
+        addTestView(party.getValue("name").equals("Ciudadanos"), "testPartySetValue");
     }
 
     public void testPopulateDatabase(){
         populateParties(4);
-
         Party party = new Party(this);
         List<Model> list = party.findAll();
-
-        if(list.size() == 4){
-            addTestView(true, "testPopulateDatabase");
-        }else{
-            addTestView(false, "testPopulateDatabase");
-        }
+        addTestView(list.size() == 4, "testPopulateDatabase");
     }
 
     public void testFindPartyCiudadanosAfterPopulateSixParties(){
         populateParties(6);
         Party staticParty = new Party(this);
-
         Model ciudadanosModel = staticParty.read(5);
-
-        if(ciudadanosModel.getValue("name").equals("Ciudadanos")){
-            addTestView(true, "testFindPartyCiudadanosAfterPopulateSixParties");
-        }else{
-            addTestView(false, "testFindPartyCiudadanosAfterPopulateSixParties");
-        }
+        addTestView(ciudadanosModel.getValue("name").equals("Ciudadanos"), "testFindPartyCiudadanosAfterPopulateSixParties");
     }
 
     private void populateParties(int numOfPartiesToPopulate){
