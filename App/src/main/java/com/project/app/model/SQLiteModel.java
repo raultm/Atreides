@@ -78,8 +78,8 @@ public abstract class SQLiteModel implements Model {
         return true;
     }
 
-    public long getId(){
-        return this._id;
+    public long getIdValue() {
+        return Long.valueOf(getValues().get(getIdField()));
     }
 
     public String getIdField(){

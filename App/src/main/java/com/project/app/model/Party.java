@@ -14,6 +14,12 @@ public class Party extends SQLiteModel implements Model {
 
     public static final String TABLE_NAME = "parties";
 
+    @Override
+    public String getTableName() {
+        return TABLE_NAME;
+    }
+
+    @Override
     public HashMap<String, SQLiteField> getFields(){
         if(fields != null){
             return fields;
@@ -34,11 +40,6 @@ public class Party extends SQLiteModel implements Model {
     }
 
     @Override
-    public String getTableName() {
-        return TABLE_NAME;
-    }
-
-    @Override
     public View populateItem(View view) {
         return null;
     }
@@ -46,11 +47,6 @@ public class Party extends SQLiteModel implements Model {
     @Override
     public View populateListItem(View view) {
         return null;
-    }
-
-    @Override
-    public long getIdValue() {
-        return 0;
     }
 
     public List<Model> cursor2ListOptions(Cursor cursor) {
