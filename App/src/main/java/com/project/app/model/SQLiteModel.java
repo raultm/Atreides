@@ -112,17 +112,20 @@ public abstract class SQLiteModel implements Model {
         try{
             SQLiteDatabase localSQLiteDatabase = mDbHelper.getWritableDatabase();
             ContentValues localContentValues = model.parse2ContentValues();
-            // ADD
-            try{
-                model.setIdValue(localSQLiteDatabase.insertOrThrow(model.getTableName(), null, localContentValues));
-            }catch(SQLiteConstraintException e){
-                model.setIdValue(-1);
-            }
+            long idValue = model.getIdValue();
+            int rowsAffected = 0;
             // UPDATE
-            if(model.getIdValue() == -1){
-                localSQLiteDatabase.update(model.getTableName(), localContentValues, model.getIdField() + " = " + model.getIdValue(), null);
+            if(idValue > 0){
+                rowsAffected = localSQLiteDatabase.update(model.getTableName(), localContentValues, model.getIdField() + " = " + model.getIdValue(), null);
             }
-
+            // ADD
+            if(rowsAffected == 0){
+                try{
+                    model.setIdValue(localSQLiteDatabase.insertOrThrow(model.getTableName(), null, localContentValues));
+                }catch(SQLiteConstraintException e){
+                    model.setIdValue(-1);
+                }
+            }
             if (model.getIdValue() == -1)
                 success = false;
             else
@@ -134,8 +137,6 @@ public abstract class SQLiteModel implements Model {
         }finally{
             mDbHelper.close();
         }
-        if(success == true)
-            model.read(model.getIdValue());
         return success;
     }
     public static boolean delete(SQLiteModel model, long id){
