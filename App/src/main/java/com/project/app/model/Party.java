@@ -24,8 +24,7 @@ public class Party extends SQLiteModel implements Model {
         if(fields != null){
             return fields;
         }
-        fields = new HashMap<String, SQLiteField>();
-        fields.put("_id"        , new SQLiteField(SQLiteField.INTEGER));
+        fields = super.getFields();
         fields.put("id"         , new SQLiteField(SQLiteField.INTEGER));
         fields.put("logo"       , new SQLiteField(SQLiteField.TEXT));
         fields.put("name"       , new SQLiteField(SQLiteField.TEXT));
