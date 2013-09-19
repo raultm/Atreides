@@ -1,12 +1,16 @@
 package com.project.app.model.interfaces;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.view.View;
 
 import java.util.List;
 
 public abstract interface Model{
+
+    public Context getContext();
+
 
     // The name of the Id Field
     public String getIdField();

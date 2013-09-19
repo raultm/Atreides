@@ -13,6 +13,7 @@ import com.project.app.AppConfig;
 import com.project.app.db.Database;
 import com.project.app.model.interfaces.Model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -150,6 +151,26 @@ public abstract class SQLiteModel implements Model {
         }
         return true;
     }
+    public static List<Model> cursor2ListOptions(SQLiteModel model, Cursor cursor) {
+        Context context = model.getContext();
+        String modelClassName = model.getClass().getName();
+        Model object = null;
+        ArrayList<Model> list = new ArrayList<Model>();
+        if (cursor.getCount() > 0){
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()){
+                try {
+                    object = (Model)Class.forName(modelClassName).getConstructor(Context.class).newInstance(context);//new Party(this.context);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                object.parseCursor(cursor);
+                list.add(object);
+                cursor.moveToNext();
+            }
+        }
+        return list;
+    }
     // SQLBuilder
     public static String getSqlWithAndConditions(SQLiteModel model, String[] conditions){
         String whereClause = "";
@@ -188,11 +209,11 @@ public abstract class SQLiteModel implements Model {
         return this.context;
     }
 
-    public void setIdField(String idFieldName){
-        this.FIELD_ID = idFieldName;
-    }
     public String getIdField(){
         return this.FIELD_ID;
+    }
+    public void setIdField(String idFieldName){
+        this.FIELD_ID = idFieldName;
     }
 
     public long getIdValue() {
@@ -276,7 +297,9 @@ public abstract class SQLiteModel implements Model {
     public boolean delete(long id){
         return delete(this, id);
     }
-
+    public List<Model> cursor2ListOptions(Cursor paramCursor){
+        return cursor2ListOptions(this, paramCursor);
+    }
     // General Model
     public void fill(HashMap<String, String> values){
         if(values == null){ values = new HashMap<String, String>(); }
@@ -310,8 +333,12 @@ public abstract class SQLiteModel implements Model {
         }
     }
     public HashMap<String, SQLiteField> getFields(){
-        HashMap<String, SQLiteField> fields = new HashMap<String, SQLiteField>();
+        if(fields != null){
+            return fields;
+        }
+        fields = new HashMap<String, SQLiteField>();
         fields.put(getIdField(), new SQLiteField(SQLiteField.INTEGER));
+        fields.putAll(getModelStructure());
         return fields;
     };
     public HashMap<String, String> getValues(){
@@ -378,6 +405,5 @@ public abstract class SQLiteModel implements Model {
     public abstract String getTableName();
     public abstract View populateItem(View view);
     public abstract View populateListItem(View view);
-    public abstract List<Model> cursor2ListOptions(Cursor paramCursor);
-
+    public abstract HashMap<String, SQLiteField> getModelStructure();
 }

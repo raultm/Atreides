@@ -84,6 +84,8 @@ public class TestsActivity extends Activity{
         addTestView(ciudadanosModel.getValue("name").equals("Ciudadanos"), "testFindPartyCiudadanosAfterPopulateSixParties");
     }
 
+
+    // Helpers
     private void populateParties(int numOfPartiesToPopulate){
         Party party = new Party(this);
         party.clearTable();
@@ -95,6 +97,4 @@ public class TestsActivity extends Activity{
             party.save(party);
         }
     }
-
-
 }
