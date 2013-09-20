@@ -5,11 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.project.app.model.Party;
-import com.project.app.model.interfaces.Model;
-
-import java.util.Iterator;
-import java.util.List;
+import com.google.gson.JsonObject;
 
 public class MainActivity extends Activity {
 
@@ -19,7 +15,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-     public void runTests(View view){
+    public void runTests(View view){
         startActivity(new Intent(this, TestsActivity.class));
+    }
+
+    public void proyectoColibriTest(View view){
+        AppConfig.log("proyectoColibriTest");
+        JsonObject data = Api.action(this, Api.API_ACTION_PARTY);
+        AppConfig.log(data.toString());
     }
 }

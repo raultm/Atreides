@@ -21,6 +21,12 @@
         android:layout_height="wrap_content"
         android:text="@string/button_run_tests"
         android:onClick="runTests"/>
+    <Button
+        android:id="@+id/button_proyecto_colibri_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_proyecto_colibri_test"
+        android:onClick="proyectoColibriTest"/>
 
 
 

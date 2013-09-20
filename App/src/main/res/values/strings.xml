@@ -11,5 +11,6 @@
     <string name="button_populate_database">Populate Database</string>
     <string name="button_find_party">Find Party</string>
     <string name="button_run_tests">Run Tests</string>
+    <string name="button_proyecto_colibri_test">Proyecto Colibri Test</string>
 
 </resources>
